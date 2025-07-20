@@ -172,7 +172,7 @@ nav a:hover::after {
 
 .medsos-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 1rem;
   padding: 1rem 2rem;
 }
