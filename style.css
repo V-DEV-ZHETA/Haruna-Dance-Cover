@@ -204,7 +204,7 @@ nav a:hover::after {
   padding: 2rem 2rem;
 }
 .galleries-container h2 {
-      font-size: 2rem;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 1rem;
   color: var(--pink-main);
@@ -214,7 +214,7 @@ nav a:hover::after {
 }
 
 .preview-img{
-  height: 600px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   margin-bottom: 1rem;
