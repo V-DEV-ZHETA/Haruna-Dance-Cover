@@ -452,3 +452,105 @@ footer {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Untuk tablet (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .member-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .medsos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .news-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mySlides img {
+    height: 500px;
+  }
+
+  .column {
+    width: 25%;
+  }
+}
+
+/* Untuk smartphone (<= 768px) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .member-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .medsos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .news-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .mySlides img {
+    height: 300px;
+  }
+
+  .column {
+    width: 33.33%;
+  }
+
+  .toggle-dark {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* Untuk layar kecil (<= 480px) */
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .member-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .medsos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
