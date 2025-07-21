@@ -200,40 +200,6 @@ nav a:hover::after {
   margin-bottom: 0.5rem;
 }
 
-.galleries-container {
-  padding: 2rem 2rem;
-}
-.galleries-container h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--pink-main);
-}
-.galleries img {
-  max-width: 100%;
-}
-
-.preview-img{
-  height: 750px;
-  width: 100%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-.galleries {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.galleries img {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-.galleries img:hover{
-    transform: scale(1.03);
-    color: #b3b3b3;
-}
 .button {
   background-color: var(--pink-soft);
   font-family: 'Poppins', sans-serif;
@@ -333,6 +299,97 @@ footer {
   border-radius: 12px;
   margin-top: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.mySlides img {
+  height: 750px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.galleries-container {
+  position: relative;
+  padding: 1rem 1rem;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+} 
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 25px 20px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 0rem 0rem;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
 }
 
 footer {

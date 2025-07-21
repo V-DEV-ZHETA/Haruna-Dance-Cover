@@ -263,28 +263,66 @@
 </section>
 
 
-  <section id="galeri">
   <div class="galleries-container">
-    <h2>GALLERY!</h2>
-      <img src="haruna/Haruna-1.jpg" class="preview-img" id="preview-img" alt="Gambar 1">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="haruna/Haruna-1.jpg" style="width:100%">
+  </div>
 
-      <div class="galleries">
-          <img src="haruna/Haruna-1.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-2.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-3.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-4.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-5.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-6.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-7.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-8.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-9.jpg" onclick="imgPreview(this.src)" alt="">
-          <img src="haruna/Haruna-10.jpg" onclick="imgPreview(this.src)" alt="">
-          </div>
-          <button class="button">
-            <h3><a href="gallery.html">Coming Soon</a> </h3>
-          </button>
-      </div>
-    </section>
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="haruna/Haruna-2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="haruna/Haruna-3.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="haruna/Haruna-4.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="haruna/Haruna-5.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="haruna/Haruna-6.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="haruna/Haruna-1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Haruna Bagi Bagi HandBanner">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="haruna/Haruna-2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Nana, Lia, Kia">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="haruna/Haruna-3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Haruna On Stage Arcadia Clash">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="haruna/Haruna-4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Haruna After Perform At Arcadia Clash">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="haruna/Haruna-5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Haruna On Stage Arcadia Clash">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="haruna/Haruna-6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Haruna On Stage Arcadia Clash">
+    </div>
+  </div>
+</div>
+
 
   <footer>
     <p>&copy; 2025 Haruna Dance Cover - Made with 💖 in Samarinda</p>
@@ -293,9 +331,34 @@
   <button class="toggle-dark" onclick="toggleDarkMode()">🌃 Mode Malam</button>
 
 <script>
-  const imgPreview = (src) => {
-      document.getElementById('preview-img').src = src
+  let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
 
       // Toggle dark mode
 const toggleBtn = document.querySelector('.toggle-dark');
